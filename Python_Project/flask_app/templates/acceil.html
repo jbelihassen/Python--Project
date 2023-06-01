@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+<style> a{ color: white;} </style>
+</head>
+
+<body style="background-color: rgb(218, 227, 231); font-weight: 500; font-family: cursive;background: linear-gradient(90deg, #90ee90, #fff,#007bff);
+background-repeat: no-repeat;" >
+
+  <header>
+   
+
+    
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-xl navbar-light fixed-top opacity" style="background-color: rgb(190,214,238,0.8);">
+      <img src="{{url_for('static', filename='navbarlogo.png')}}" alt=""  height="100px" >
+      <a class="navbar-brand" href='/'style="font-size: 40px;font-family: Segoe Print;color: #007bff;">HOME</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/rooms"style="font-size: 28px;font-family: Segoe Print;color: #007bff; font-weight: 800">rooms </a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/services" style="font-size: 28px;font-family: Segoe Print;color: #007bff;font-weight: 800">services</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/prices" style="font-size: 28px;font-family: Segoe Print;;color: #007bff; font-weight: 800">prices</a>
+          </li>
+         
+
+          
+          
+         
+        </ul>
+        <h1 style="font-family: Segoe Print; font-weight: 800;margin-right: 30px;color: #007bff; ">Welcome to hacienda mornag</h1>
+        {%if 'admin_id' in session %}
+        <button type="button" class="btn  btn btn-primary" style="margin-left: 20px;margin-right: 20px;"> <a href="/admin" style="color: white;">Admin</a> </button>
+        {%endif%}
+      </div>
+      {%if 'admin_id' in session or 'user_id' in session%}
+        <div>
+          
+          <button type="button" class="btn  btn btn-primary"> <a href="/logout" style="color: white;">logout</a> </button>
+        </div>
+        {%endif%}
+    </nav>
+
+    <!-- Carousel wrapper -->
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="2000" >
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="{{url_for('static', filename='home page list1.jpg')}}" class="d-block w-100" alt="..." style="height: 500px; " >
+        </div>
+        <div class="carousel-item">
+          <img src="{{url_for('static', filename='home page3.jpg')}}" class="d-block w-100" alt="..."style="height: 500px;">
+        </div>
+        <div class="carousel-item">
+          <img src="{{url_for('static', filename='poster.jpg')}}" class="d-block w-100" alt="..."style="height: 500px;">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-target="#carouselExampleIndicators" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-target="#carouselExampleIndicators" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </button>
+    </div>
+    <!-- Carousel wrapper -->
+  </header>
+  <!--Main Navigation-->
+
+  <!--Main layout-->
+  <br>
+  <br>
+  <main class="mt-5">
+    <div class="container">
+      <!--Section: Content-->
+      <section>
+        <div class="row">
+          <div class="col-md-6 gx-5 mb-4">
+            <div class="bg-image hover-overlay ripple shadow-2-strong rounded-5" data-mdb-ripple-color="light">
+              <img src="{{url_for('static', filename='logo.jpg.jpg')}}" class="img-fluid"  width="450px"/>
+              <a href="#!">
+                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-md-6 gx-5 mb-4">
+            <h4><strong>About us</strong></h4>
+            <p class="" style="font-size: 20px;">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis consequatur
+              eligendi quisquam doloremque vero ex debitis veritatis placeat unde animi laborum
+              sapiente illo possimus, commodi dignissimos obcaecati illum maiores corporis.
+            </p>
+            <br>
+            <br>
+           
+            <h4><strong>location information</strong></h4>
+            <p class="" style="font-size: 20px;">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod itaque voluptate
+              nesciunt laborum incidunt. Officia, quam consectetur. Earum eligendi aliquam illum
+              alias, unde optio accusantium soluta, iusto molestiae adipisci et?
+            </p>
+          </div>
+        </div>
+      </section>
+      <!--Section: Content-->
+<br>
+<br>
+      <hr class="my-5" />
+     <h3 style="color: rgb(0, 0, 0);">little show for our lovely guesthouse</h3>
+     <br>
+     <br>
+     <div>
+     <video width="1000" height="500" poster="{{url_for('static', filename='poster.jpg')}}" style="border: 2px black solid;" controls>
+      <source src="{{url_for('static', filename='hacienda mornag.mp4')}}" type="video/mp4">
+      
+      Your browser does not support the video tag.
+   </video>
+      </div>
+    
+    <br>
+    <br>
+    <br>
+    <hr class="my-5" />
+   
+       
+      <!--Section: Content-->
+      <section class="text-center" >
+        <h4 class="mb-5"><strong>Leisure and
+          Activities</strong></h4>
+
+        <div class="row">
+          <div class="col-lg-4 col-md-12 mb-4" >
+            <div class="card">
+              <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                <img src="{{url_for('static', filename='clim.png')}}" class="img-fluid" />
+                
+              </div>
+              <div class="card-body" >
+                <h5 class="card-title">climb</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up the bulk of the
+                  card's content.
+                </p>
+               
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card">
+              <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                <img src="{{url_for('static', filename='camping.jpg')}}" class="img-fluid" style="height: 234px;" />
+               
+              </div>
+              <div class="card-body" style="height: 148px;">
+                <h5 class="card-title">camping</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up the bulk of the
+                  card's content.
+                </p>
+               
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card">
+              <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                <img src="{{url_for('static', filename='yoga 2.jpg')}}" class="img-fluid" style="height:234px ;"/>
+               
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Yoga</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up the bulk of the
+                  card's content.
+                </p>
+              
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="row" style="display: flex; justify-content: center;"> 
+        <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card">
+          <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+            <img src="{{url_for('static', filename='swimming.jpg')}}" class="img-fluid" style="height:234px ;"/>
+           
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Swimming</h5>
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the bulk of the
+              card's content.
+            </p>
+          
+          </div>
+        </div>
+      </div>
+      
+      
+    </div>
+     
+      <!--Section: Content-->
+
+      <hr class="my-5" />
+
+      <!--Section: Content-->
+    
+      <!--Section: Content-->
+    </div>
+  </main>
+  <!--Main layout-->
+
+  <!--Footer-->
+  <!-- Footer -->
+<footer class="text-center text-lg-start  text-dark" style="background-color: rgb(190,214,238);padding: 20px;" >
+  <!-- Section: Social media -->
+  
+  <!-- Section: Social media -->
+
+  <!-- Section: Links  -->
+  <section class="">
+    <div class="container text-center text-md-start mt-5">
+      <!-- Grid row -->
+      <div class="row mt-3">
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <!-- Content -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            <i class="fas fa-gem me-3"></i>hacienda mornag
+          </h6>
+          <p>
+            Here you can use rows and columns to organize your footer content. Lorem ipsum
+            dolor sit amet, consectetur adipisicing elit.
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            services
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">rooms</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">leisure and
+              Activities</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">prices</a>
+          </p>
+         
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+       
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+          <p><i class="fas fa-home me-3"></i> mornage 1009 jbal rssas</p>
+          <p>
+            <i class="fas fa-envelope me-3"></i>
+            hacienda@gmail.com.com
+          </p>
+          <p><i class="fas fa-phone me-3"></i> + 21654188087</p>
+          <p><i class="fas fa-print me-3"></i> + 21656783453</p>
+        </div>
+        <div>
+          {% if not session %}
+          <div>
+        <button type="button" class="btn  btn btn-primary"> <a href="/log/user" style="color: white;">login</a> </button>
+      </div>
+      {%endif%}
+      <br>
+      {%if 'admin_id' in session or 'user_id' in session%}
+      <div>
+          <button type="button" class="btn  btn btn-primary"> <a href="/feed_backs/new" style="color: white;">feedbacks</a> </button>
+        </div>
+        {%endif%}
+        <br>
+        {%if 'user_id' in session%}
+        <div>
+          <button type="button" class="btn  btn btn-primary"> <a href="/user/profil" style="color: white;">your profile</a> </button>
+        </div>
+        {%endif%}
+        <br>
+        
+      </div>
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
+    </div>
+  </section>
+  <!-- Section: Links  -->
+
+  <!-- Copyright -->
+  <div class="text-center p-4" style="background-color: rgba(243, 231, 14, 0.05);">
+   
+    <a class="text-reset fw-bold" href="">haciendamornag.com</a>
+    <img src="{{url_for('static', filename='Facebook-Logo-Square-768x768-1.png')}}" alt="" width="30px">
+    <img src="{{url_for('static', filename='instagram_logo.png')}}" alt="" width="30">
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script> </body>
+</html>
